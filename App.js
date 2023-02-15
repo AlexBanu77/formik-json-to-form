@@ -12,23 +12,6 @@ const myJson = {
 }
 
 const getInitialValues = (myJson) => {
-    // let _initialValues = {};
-    // Object.keys(myJson).forEach( key => {
-    //     switch (typeof myJson[key]){
-    //         case "number":
-    //             _initialValues[key] = 0;
-    //             break;
-    //         case "string":
-    //             _initialValues[key] = "";
-    //             break;
-    //         case "boolean":
-    //             _initialValues[key] = false;
-    //             break;
-    //         default:
-    //             _initialValues[key] = undefined // undefined works if nullsafety
-    //     }
-    // }
-    // );
     const objectFieldsAsArray = Object.keys(myJson).map( (key) => { return {[key]:myJson[key]}})
     return {fields: objectFieldsAsArray};
 }
@@ -82,32 +65,7 @@ const App = () => {
                 // })}
                 onSubmit={values => console.log(values)}
             >
-                {/* <Form>
-                    <TextInput 
-                        label="Insert Text"
-                        name="firstInput"
-                        type="text"
-                        placeholder="Write me!"
-                    />
-
-                    <CheckBox label="I Hereby Accept to Code!" name="firstCheckBox"/>
-                        
-                    <NumberInput 
-                        label="Insert Number"
-                        name="firstNumber"
-                        min="0"
-                        max="1000"
-                        type="number"
-                    />
-
-                    <RadioInput
-                        label="Select an Option!"
-                        name="firstSelect"
-                        options={[{name:"Option 1"},{name:"Option 2"}]}
-                    />
-
-                    <button type="submit">Submit!</button>
-                </Form> */}
+                
                 {({ values }) => (
                     <Form>
                         <FieldArray
